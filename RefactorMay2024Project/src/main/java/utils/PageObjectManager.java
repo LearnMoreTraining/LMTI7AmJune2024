@@ -1,10 +1,7 @@
 package utils;
 
 import org.openqa.selenium.WebDriver;
-import pageobjects.BabyWishListPage;
-import pageobjects.HomePage;
-import pageobjects.LearnMoreAlertPage;
-import pageobjects.LearnMoreExplicitPage;
+import pageobjects.*;
 
 public class PageObjectManager {
 
@@ -13,6 +10,7 @@ public class PageObjectManager {
     public WebDriver driver; //null
     public LearnMoreAlertPage learnMoreAlertPage;
     public LearnMoreExplicitPage learnMoreExplicitPage;
+    public  WikiPage wikiPage;
     public PageObjectManager(WebDriver driver){
         this.driver = driver; //k
     }
@@ -36,6 +34,11 @@ public class PageObjectManager {
 
       learnMoreExplicitPage = new LearnMoreExplicitPage(driver);
       return learnMoreExplicitPage;
+    }
+
+    public WikiPage getWikiPage(){
+        wikiPage = new WikiPage(driver);
+        return wikiPage;
     }
 
 }
