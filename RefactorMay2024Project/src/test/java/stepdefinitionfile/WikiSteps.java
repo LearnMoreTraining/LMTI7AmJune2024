@@ -42,4 +42,13 @@ public class WikiSteps {
         Assert.assertEquals("Company type",context.pageObjectManager.getWikiPage().getColumnOneValues().get(2));
         Assert.assertEquals("Public",context.pageObjectManager.getWikiPage().getColumnTwoValues().get(2));
     }
+
+
+    @Then("user validates the key and value pair relation of share holders and shareholdings")
+    public void userValidatesTheKeyAndValuePairRelationOfShareHoldersAndShareholdings() {
+
+        System.out.println(context.pageObjectManager.getWikiPage().getShareHoldingAndStakeHoldersValues().get("Others"));
+        Assert.assertEquals(" 0.32%",context.pageObjectManager.getWikiPage().getShareHoldingAndStakeHoldersValues().get("Others"));
+
+    }
 }

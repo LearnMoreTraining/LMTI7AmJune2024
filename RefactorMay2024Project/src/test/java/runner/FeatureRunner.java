@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         features = {"src/test/resources/featurefile"},
         glue = {"stepdefinitionfile"},
         plugin = {"pretty"},
-        tags = "@WiKi01"
+        tags = "@Wiki02"
 )
 public class FeatureRunner {
 }
