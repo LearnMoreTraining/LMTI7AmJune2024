@@ -5,6 +5,8 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import utils.TestContext;
 
+import java.io.IOException;
+
 public class AmazonHomePageSteps {
 
     TestContext context;
@@ -15,8 +17,8 @@ public class AmazonHomePageSteps {
     }
 
     @Given("user clicks the baby wishlist from accounts & Lists")
-    public void clickBabyWishList(){
-
+    public void clickBabyWishList() throws IOException {
+        context.pageObjectManager.getHomePage().enterProductName("login",1,4);
         context.pageObjectManager.getHomePage().clickBabyWish();
 
     }
