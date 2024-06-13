@@ -1,6 +1,7 @@
 package pageobjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.InvalidArgumentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,11 +24,20 @@ public class LearnMoreExplicitPage {
     }
 
     public String getChangeText(){
+        String textValue;
+        try{
+            textValue = driver.findElement(By.xpath("//h3[text()='Hello, Learn More Aspirants']")).getText();
+        }
+        catch(NoSuchElementException e){
             WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
             driverWait.pollingEvery(Duration.ofSeconds(5));
             driverWait.ignoring(NoSuchElementException.class);
             driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h3[text()='Hello, Learn More Aspirants']")));
-      return  driver.findElement(By.xpath("//h3[text()='Hello, Learn More Aspirants']")).getText();
+            textValue = driver.findElement(By.xpath("//h3[text()='Hello, Learn More Aspirants']")).getText();
+        }
+
+
+        return textValue;
     }
 
 
