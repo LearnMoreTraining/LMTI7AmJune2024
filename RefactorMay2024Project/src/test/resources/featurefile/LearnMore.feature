@@ -10,3 +10,8 @@ Feature: Learn More Automation
   Scenario: Change in Text Validation
     Given user clicks on change Text button
     Then validate the change text value
+
+  @lmti03
+  Scenario: login validation
+    Given user enter the user name and password
+    Then validate the title of the page
