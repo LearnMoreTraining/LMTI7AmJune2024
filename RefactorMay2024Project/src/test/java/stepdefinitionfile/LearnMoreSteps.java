@@ -42,4 +42,15 @@ public class LearnMoreSteps {
     public void userClicksOnChangeTextButton() {
         context.pageObjectManager.getLearnMoreExplicitPage().clickChangeTextButton();
     }
+
+    @Given("user enter the user name and password")
+    public void userEnterTheUserNameAndPassword() {
+
+        context.pageObjectManager.getLearnMoreLoginPage().enterUserName().enterPassword().clickLoginButton().switchToEventManagmentPage();
+
+    }
+
+    @Then("validate the title of the page")
+    public void validateTheTitleOfThePage() {
+    }
 }

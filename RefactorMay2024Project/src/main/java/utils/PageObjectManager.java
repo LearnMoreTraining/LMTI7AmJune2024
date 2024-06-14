@@ -41,4 +41,9 @@ public class PageObjectManager {
         return wikiPage;
     }
 
+    public LearnMoreLoginPage getLearnMoreLoginPage(){
+        LearnMoreLoginPage learnMoreLoginPage = new LearnMoreLoginPage(driver);
+        return learnMoreLoginPage;
+    }
+
 }
