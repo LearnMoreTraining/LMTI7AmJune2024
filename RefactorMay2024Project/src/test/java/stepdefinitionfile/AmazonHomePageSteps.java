@@ -18,7 +18,7 @@ public class AmazonHomePageSteps {
 
     @Given("user clicks the baby wishlist from accounts & Lists")
     public void clickBabyWishList() throws IOException {
-        context.pageObjectManager.getHomePage().enterProductName("login",1,4);
+        context.pageObjectManager.getHomePage().enterProductName("login",0,0);
         context.pageObjectManager.getHomePage().clickBabyWish();
 
     }
